@@ -126,7 +126,7 @@ export default function SharePage() {
 
           <div className="form-group">
             <label htmlFor="age" className="form-label">
-              Vârsta când s-a întâmplat (opțional)
+              Vârsta ta (opțional)
             </label>
             <input
               type="number"
