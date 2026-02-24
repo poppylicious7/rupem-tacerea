@@ -1,7 +1,13 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { sql } from "@vercel/postgres";
 
-export async function GET() {
+export async function GET(request: NextRequest) {
+  const authHeader = request.headers.get("authorization");
+  const password = authHeader?.replace("Bearer ", "");
+  if (!password || password !== process.env.ADMIN_PASSWORD) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
   try {
     await sql`
       CREATE TABLE IF NOT EXISTS stories (
