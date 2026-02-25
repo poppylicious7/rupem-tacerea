@@ -191,6 +191,20 @@ body {
   box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
 }
 
+/* Focus indicators for keyboard navigation */
+.btn:focus-visible,
+.nav-link:focus-visible,
+.nav-logo:focus-visible,
+.quick-exit:focus-visible,
+a:focus-visible {
+  outline: 3px solid #7c3aed;
+  outline-offset: 2px;
+}
+
+.quick-exit:focus-visible {
+  outline-color: white;
+}
+
 .form-textarea {
   min-height: 200px;
   resize: vertical;
