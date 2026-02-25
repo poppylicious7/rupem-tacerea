@@ -22,7 +22,7 @@ export default function RootLayout({
     <html lang="ro">
       <body className={inter.className}>
         {/* Quick Exit Button */}
-        <a href="https://www.google.com" className="quick-exit">
+        <a href="https://www.google.com" className="quick-exit" aria-label="Ieșire rapidă — părăsește acest site imediat">
           Ieșire rapidă
         </a>
 
