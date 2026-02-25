@@ -185,7 +185,7 @@ textarea:focus-visible {
 
 | Priority | Issue | Effort |
 | --- | --- | --- |
-| Critical | No focus indicators (WCAG fail) | 1 hr |
+| ~~Critical~~ | ~~No focus indicators (WCAG fail)~~ | ✅ Fixed |
 | Critical | Admin table unresponsive on mobile | 2 hrs |
 | Critical | No mobile nav collapse | 3 hrs |
 | High | No active nav state | 30 min |
@@ -405,7 +405,7 @@ const nextConfig: NextConfig = {
 4. ✅ **Add security headers** to `next.config.ts` (CSP, X-Frame-Options, HSTS)
 
 ## Phase 2 — Fix within 1 week
-5. **Add focus indicators** to `globals.css` (WCAG 2.4.7 failure)
+5. ✅ **Add focus indicators** to `globals.css` (WCAG 2.4.7 failure)
 6. **Add Zod validation** to all API routes
 7. **Add rate limiting** to `/api/admin` and `/api/stories`
 8. **Implement mobile nav collapse** (hamburger menu)
