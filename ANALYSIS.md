@@ -100,8 +100,8 @@ Root (/)
 
 | Issue | File | WCAG Criterion |
 | --- | --- | --- |
-| No focus indicators | `globals.css` | 2.4.7 |
-| Quick-exit button has no aria-label | `layout.tsx:25` | 4.1.2 |
+| ~~No focus indicators~~ | ~~`globals.css`~~ | ~~2.4.7~~ ✅ Fixed |
+| ~~Quick-exit button has no aria-label~~ | ~~`layout.tsx:25`~~ | ~~4.1.2~~ ✅ Fixed |
 | Error messages not announced (`role="alert"` missing) | `share/page.tsx:182` | 4.1.3 |
 | Admin filter buttons lack `aria-pressed` | `admin/page.tsx:166` | 4.1.2 |
 | No skip-to-content link | `layout.tsx` | 2.4.1 |
@@ -190,7 +190,7 @@ textarea:focus-visible {
 | Critical | No mobile nav collapse | 3 hrs |
 | High | No active nav state | 30 min |
 | High | Error messages not announced | 30 min |
-| High | Quick-exit missing aria-label | 10 min |
+| ~~High~~ | ~~Quick-exit missing aria-label~~ | ✅ Fixed |
 | Medium | Form validation inconsistent | 2 hrs |
 | Medium | Placeholder contrast unverified | 1 hr |
 | Low | No skip-to-content link | 30 min |
@@ -405,7 +405,7 @@ const nextConfig: NextConfig = {
 4. ✅ **Add security headers** to `next.config.ts` (CSP, X-Frame-Options, HSTS)
 
 ## Phase 2 — Fix within 1 week
-5. ✅ **Add focus indicators** to `globals.css` (WCAG 2.4.7 failure)
+5. **Add focus indicators** to `globals.css` (WCAG 2.4.7 failure)
 6. **Add Zod validation** to all API routes
 7. **Add rate limiting** to `/api/admin` and `/api/stories`
 8. **Implement mobile nav collapse** (hamburger menu)
