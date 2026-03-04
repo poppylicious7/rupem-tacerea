@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -18,6 +19,17 @@ export default function Home() {
           </Link>
         </div>
       </section>
+
+      <div style={{ width: "100%", maxHeight: "520px", overflow: "hidden", lineHeight: 0 }}>
+        <Image
+          src="/Hero-stories.jpg"
+          alt="Persoană cu mesajul 'Love Shouldn't Hurt' scris pe spate — imagine simbolică pentru campania împotriva violenței domestice"
+          width={1366}
+          height={910}
+          style={{ width: "100%", height: "520px", objectFit: "cover", objectPosition: "center top" }}
+          priority
+        />
+      </div>
 
       <div className="container">
         <div style={{ textAlign: "center", marginTop: "60px", marginBottom: "48px" }}>
