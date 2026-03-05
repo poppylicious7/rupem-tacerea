@@ -9,7 +9,9 @@ export default function SharePage() {
   const [story, setStory] = useState("");
   const [age, setAge] = useState("");
   const [email, setEmail] = useState("");
-  const [consent, setConsent] = useState(false);
+  const [consentPublic, setConsentPublic] = useState(false);
+  const [consentOwnership, setConsentOwnership] = useState(false);
+  const [consentEditing, setConsentEditing] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
@@ -64,9 +66,10 @@ export default function SharePage() {
   return (
     <div className="container">
       <h1 style={{ fontSize: "28px", marginBottom: "8px" }}>Împărtășește povestea ta</h1>
-      <p style={{ color: "#6b7280", marginBottom: "32px" }}>
-        Povestea ta poate ajuta pe altcineva să nu se simtă singur.
-        Poți alege să rămâi anonim.
+      <p style={{ color: "#6b7280", marginBottom: "32px", lineHeight: 2 }}>
+        Povestea ta poate ajuta pe altcineva să nu se simtă singur.<br />
+        În același timp, studiile arată că împărtășirea poveștii personale poate aduce o eliberare sufletească și o descărcare.<br />
+        Poți alege să apari cu prenumele tău sau să rămâi anonim.
       </p>
 
       <div className="story-card">
@@ -163,18 +166,40 @@ export default function SharePage() {
           </div>
 
           <div className="form-group">
+            <label style={{ display: "flex", alignItems: "flex-start", gap: "12px", cursor: "pointer", marginBottom: "12px" }}>
+              <input
+                type="checkbox"
+                checked={consentPublic}
+                onChange={(e) => setConsentPublic(e.target.checked)}
+                style={{ marginTop: "4px", flexShrink: 0 }}
+              />
+              <span style={{ fontSize: "14px", color: "#374151" }}>
+                Înțeleg că povestea mea va fi publicată public pe acest site.
+              </span>
+            </label>
+            <label style={{ display: "flex", alignItems: "flex-start", gap: "12px", cursor: "pointer", marginBottom: "12px" }}>
+              <input
+                type="checkbox"
+                checked={consentOwnership}
+                onChange={(e) => setConsentOwnership(e.target.checked)}
+                style={{ marginTop: "4px", flexShrink: 0 }}
+              />
+              <span style={{ fontSize: "14px", color: "#374151" }}>
+                Confirm că aceasta este povestea mea — perspectiva mea personală despre cum violența mi-a afectat
+                viața, indiferent de rolul pe care l-am avut (victimă, martor, persoană apropiată). Nu îmi asum
+                dreptul de a spune povestea altcuiva în locul lui.
+              </span>
+            </label>
             <label style={{ display: "flex", alignItems: "flex-start", gap: "12px", cursor: "pointer" }}>
               <input
                 type="checkbox"
-                checked={consent}
-                onChange={(e) => setConsent(e.target.checked)}
-                required
-                style={{ marginTop: "4px" }}
+                checked={consentEditing}
+                onChange={(e) => setConsentEditing(e.target.checked)}
+                style={{ marginTop: "4px", flexShrink: 0 }}
               />
               <span style={{ fontSize: "14px", color: "#374151" }}>
-                Înțeleg că povestea mea va fi publicată public pe acest website.
-                Sunt de acord ca moderatorii să facă corecții minore de ortografie
-                și claritate, fără a schimba sensul poveștii mele.
+                Sunt de acord ca moderatorii să facă corecții minore de ortografie sau claritate,
+                fără a schimba sensul poveștii mele.
               </span>
             </label>
           </div>
@@ -188,7 +213,7 @@ export default function SharePage() {
           <button
             type="submit"
             className="btn btn-primary"
-            disabled={isSubmitting || !consent}
+            disabled={isSubmitting || !consentPublic || !consentOwnership || !consentEditing}
             style={{ width: "100%" }}
           >
             {isSubmitting ? "Se trimite..." : "Trimite povestea"}

@@ -33,8 +33,8 @@ export default function RootLayout({
               Rupem Tăcerea
             </Link>
             <div className="nav-links">
-              <Link href="/stories" className="nav-link">Povești</Link>
               <Link href="/share" className="nav-link">Împărtășește</Link>
+              <Link href="/stories" className="nav-link">Experiențe</Link>
               <Link href="/resources" className="nav-link">Resurse</Link>
             </div>
           </div>

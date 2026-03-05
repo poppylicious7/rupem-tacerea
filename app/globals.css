@@ -468,6 +468,18 @@ a:focus-visible {
 
 /* Mobile responsive */
 @media (max-width: 640px) {
+  .hero-split {
+    flex-direction: column;
+  }
+
+  .hero-split-image {
+    min-height: 280px !important;
+  }
+
+  .hero-title-large {
+    font-size: 36px;
+  }
+
   .hero-gradient {
     padding: 60px 20px;
   }

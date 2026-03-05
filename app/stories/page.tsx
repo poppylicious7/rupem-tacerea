@@ -31,15 +31,14 @@ export default async function StoriesPage() {
 
   return (
     <div className="container">
-      <div className="content-warning">
-        <strong>Avertisment privind conținutul:</strong> Poveștile de mai jos conțin
-        descrieri ale violenței care pot fi tulburătoare pentru unii cititori.
-        Dacă ai nevoie de sprijin, consultă <Link href="/resources" style={{ color: "#92400e", textDecoration: "underline" }}>pagina de resurse</Link>.
-      </div>
-
-      <h1 style={{ fontSize: "28px", marginBottom: "8px" }}>Povești</h1>
-      <p style={{ color: "#6b7280", marginBottom: "32px" }}>
-        Experiențe reale împărtășite de persoane care au rupt tăcerea.
+      <h1 style={{ fontSize: "28px", marginBottom: "12px" }}>Experiențe</h1>
+      <p style={{ color: "#6b7280", marginBottom: "16px", lineHeight: 1.7 }}>
+        Povești reale spuse de persoane care au rupt tăcerea.<br />
+        Pentru a schimba ceva, trebuie să cunoaștem.
+      </p>
+      <p style={{ color: "#7c3aed", fontStyle: "italic", fontSize: "14px", marginBottom: "32px" }}>
+        Unele povești conțin descrieri ale violenței care pot fi tulburătoare. Ai grijă de tine —
+        dacă ai nevoie de sprijin, consultă <Link href="/resources" style={{ color: "#7c3aed" }}>pagina de resurse</Link>.
       </p>
 
       {stories.length === 0 ? (
@@ -71,7 +70,7 @@ export default async function StoriesPage() {
           Povestea ta poate ajuta pe altcineva să nu se simtă singur.
         </p>
         <Link href="/share" className="btn btn-primary">
-          Împărtășește povestea ta
+          Împărtășește
         </Link>
       </div>
     </div>
