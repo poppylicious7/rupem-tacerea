@@ -52,7 +52,7 @@ export default function SharePage() {
       <div className="container" style={{ textAlign: "center", paddingTop: "60px" }}>
         <div style={{ fontSize: "48px", marginBottom: "24px" }}>💜</div>
         <h1 style={{ fontSize: "28px", marginBottom: "16px" }}>Mulțumim</h1>
-        <p style={{ color: "#6b7280", maxWidth: "500px", margin: "0 auto 32px" }}>
+        <p style={{ color: "var(--gray)", maxWidth: "500px", margin: "0 auto 32px" }}>
           Povestea ta a fost trimisă și va fi revizuită de un moderator.
           Dacă este aprobată, va apărea pe pagina de povești.
         </p>
@@ -65,10 +65,12 @@ export default function SharePage() {
 
   return (
     <div className="container">
-      <h1 style={{ fontSize: "28px", marginBottom: "8px" }}>Împărtășește povestea ta</h1>
-      <p style={{ color: "#6b7280", marginBottom: "32px", lineHeight: 2 }}>
-        Povestea ta poate ajuta pe altcineva să nu se simtă singur.<br />
-        În același timp, studiile arată că împărtășirea poveștii personale poate aduce o eliberare sufletească și o descărcare.<br />
+      <h1 style={{ fontSize: "42px", fontWeight: 800, marginBottom: "16px" }}>
+        Împărtășește povestea ta
+      </h1>
+      <p style={{ color: "var(--dark)", marginBottom: "40px", lineHeight: 1.9, opacity: 0.8, textAlign: "center" }}>
+        Povestea ta poate ajuta pe cineva să nu se simtă singur.<br />
+        În același timp, studiile arată că împărtășirea poveștii personale poate aduce eliberare sufletească și descărcare benefică.<br />
         Poți alege să apari cu prenumele tău sau să rămâi anonim.
       </p>
 
@@ -84,10 +86,10 @@ export default function SharePage() {
               className="form-input"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              placeholder="Prenume sau lasă gol pentru Anonim"
+              placeholder="Ex: Maria"
             />
             <p className="form-hint">
-              Ex: Maria, Ana, sau lasă gol pentru a apărea ca &quot;Anonim&quot;
+              Dacă lași gol va apărea ca &quot;Anonim&quot;
             </p>
           </div>
 
@@ -105,7 +107,7 @@ export default function SharePage() {
               maxLength={200}
             />
             <p className="form-hint">
-              Un titlu scurt care să rezume povestea ta.
+              Un scurt titlu care să rezume povestea ta.
             </p>
           </div>
 
@@ -118,18 +120,18 @@ export default function SharePage() {
               className="form-input form-textarea"
               value={story}
               onChange={(e) => setStory(e.target.value)}
-              placeholder="Scrie povestea ta aici..."
+              placeholder="Scrie povestea ta aici...."
               required
             />
             <p className="form-hint">
-              Scrie cât de mult sau cât de puțin dorești. Nu include informații
+              Scrie cât de mult sau cât de puțin dorești. Pentru siguranță, nu include informații
               care te pot identifica (adrese, nume complete, etc.)
             </p>
           </div>
 
           <div className="form-group">
             <label htmlFor="age" className="form-label">
-              Vârsta ta (opțional)
+              Vârsta (opțional)
             </label>
             <input
               type="number"
@@ -140,10 +142,10 @@ export default function SharePage() {
               placeholder="Ex: 25"
               min="1"
               max="120"
-              style={{ maxWidth: "120px" }}
+              style={{ maxWidth: "160px" }}
             />
             <p className="form-hint">
-              Vârsta va apărea lângă nume, ex: &quot;Maria, 33&quot;
+              Vârsta va apărea lângă nume, ex: &quot;Maria, 25&quot;
             </p>
           </div>
 
@@ -157,47 +159,49 @@ export default function SharePage() {
               className="form-input"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="doar dacă vrei să revizuiești editările"
+              placeholder="Ex: johndoe@email.com"
             />
             <p className="form-hint">
-              Dacă lași emailul, te vom contacta pentru a aproba eventualele
-              corecții minore înainte de publicare.
+              Dacă lași emailul, te vom contacta pentru a aproba eventualele corecții înainte de publicare.
             </p>
           </div>
 
+          {/* 3 consent checkboxes */}
           <div className="form-group">
-            <label style={{ display: "flex", alignItems: "flex-start", gap: "12px", cursor: "pointer", marginBottom: "12px" }}>
+            <label style={{ display: "flex", alignItems: "flex-start", gap: "12px", cursor: "pointer", marginBottom: "14px" }}>
               <input
                 type="checkbox"
                 checked={consentPublic}
                 onChange={(e) => setConsentPublic(e.target.checked)}
-                style={{ marginTop: "4px", flexShrink: 0 }}
+                style={{ marginTop: "3px", flexShrink: 0, accentColor: "var(--purple)" }}
               />
-              <span style={{ fontSize: "14px", color: "#374151" }}>
+              <span style={{ fontSize: "14px", color: "var(--dark)" }}>
                 Înțeleg că povestea mea va fi publicată public pe acest site.
               </span>
             </label>
-            <label style={{ display: "flex", alignItems: "flex-start", gap: "12px", cursor: "pointer", marginBottom: "12px" }}>
+
+            <label style={{ display: "flex", alignItems: "flex-start", gap: "12px", cursor: "pointer", marginBottom: "14px" }}>
               <input
                 type="checkbox"
                 checked={consentOwnership}
                 onChange={(e) => setConsentOwnership(e.target.checked)}
-                style={{ marginTop: "4px", flexShrink: 0 }}
+                style={{ marginTop: "3px", flexShrink: 0, accentColor: "var(--purple)" }}
               />
-              <span style={{ fontSize: "14px", color: "#374151" }}>
+              <span style={{ fontSize: "14px", color: "var(--dark)" }}>
                 Confirm că aceasta este povestea mea — perspectiva mea personală despre cum violența mi-a afectat
                 viața, indiferent de rolul pe care l-am avut (victimă, martor, persoană apropiată). Nu îmi asum
                 dreptul de a spune povestea altcuiva în locul lui.
               </span>
             </label>
+
             <label style={{ display: "flex", alignItems: "flex-start", gap: "12px", cursor: "pointer" }}>
               <input
                 type="checkbox"
                 checked={consentEditing}
                 onChange={(e) => setConsentEditing(e.target.checked)}
-                style={{ marginTop: "4px", flexShrink: 0 }}
+                style={{ marginTop: "3px", flexShrink: 0, accentColor: "var(--purple)" }}
               />
-              <span style={{ fontSize: "14px", color: "#374151" }}>
+              <span style={{ fontSize: "14px", color: "var(--dark)" }}>
                 Sunt de acord ca moderatorii să facă corecții minore de ortografie sau claritate,
                 fără a schimba sensul poveștii mele.
               </span>
@@ -205,7 +209,7 @@ export default function SharePage() {
           </div>
 
           {error && (
-            <p style={{ color: "#dc2626", fontSize: "14px", marginBottom: "16px" }}>
+            <p role="alert" style={{ color: "var(--red)", fontSize: "14px", marginBottom: "16px" }}>
               {error}
             </p>
           )}
@@ -214,7 +218,7 @@ export default function SharePage() {
             type="submit"
             className="btn btn-primary"
             disabled={isSubmitting || !consentPublic || !consentOwnership || !consentEditing}
-            style={{ width: "100%" }}
+            style={{ width: "100%", padding: "18px", fontSize: "15px" }}
           >
             {isSubmitting ? "Se trimite..." : "Trimite povestea"}
           </button>
@@ -225,8 +229,8 @@ export default function SharePage() {
         <h3>Ai nevoie de ajutor?</h3>
         <p>
           Dacă ești în pericol sau ai nevoie de sprijin,
-          consultă <Link href="/resources" style={{ color: "#7c3aed" }}>pagina de resurse</Link> sau
-          sună la <a href="tel:0800500333" style={{ color: "#7c3aed" }}>0800 500 333</a>.
+          consultă <Link href="/resources" style={{ color: "var(--purple)" }}>pagina de resurse</Link> sau
+          sună la <a href="tel:0800500333" style={{ color: "var(--purple)" }}>0800 500 333</a>.
         </p>
       </div>
     </div>

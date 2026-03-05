@@ -1,10 +1,19 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Poppins, Be_Vietnam_Pro } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
 
-const inter = Inter({
-  subsets: ["latin", "latin-ext"],
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "600", "700", "800"],
+  variable: "--font-poppins",
+  display: "swap",
+});
+
+const beVietnam = Be_Vietnam_Pro({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-be-vietnam",
   display: "swap",
 });
 
@@ -20,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ro">
-      <body className={inter.className}>
+      <body className={`${poppins.variable} ${beVietnam.variable}`}>
         {/* Quick Exit Button */}
         <a href="https://www.google.com" className="quick-exit" aria-label="Ieșire rapidă — părăsește acest site imediat">
           Ieșire rapidă
@@ -46,11 +55,11 @@ export default function RootLayout({
         <footer className="footer">
           <p>
             <strong>Ai nevoie de ajutor?</strong> Sună la{" "}
-            <a href="tel:0800500333" style={{ color: "#7c3aed" }}>0800 500 333</a>{" "}
+            <a href="tel:0800500333" style={{ color: "#8f1eae" }}>0800 500 333</a>{" "}
             (linie gratuită, 24/7)
           </p>
           <p style={{ marginTop: "8px" }}>
-            <Link href="/resources" style={{ color: "#7c3aed" }}>
+            <Link href="/resources" style={{ color: "#8f1eae" }}>
               Vezi toate resursele disponibile
             </Link>
           </p>
