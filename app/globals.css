@@ -22,7 +22,7 @@
 body {
   background: var(--light-bg);
   color: var(--dark);
-  font-family: var(--font-be-vietnam), 'Be Vietnam Pro', sans-serif;
+  font-family: var(--font-inter), 'Be Vietnam Pro', sans-serif;
   line-height: 1.7;
 }
 
@@ -34,7 +34,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Quick exit button */
 .quick-exit {
   position: fixed;
-  top: 16px;
+  top: 13px;
   right: 20px;
   padding: 10px 20px;
   background: var(--red);
@@ -55,15 +55,16 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Navigation */
 .nav {
-  padding: 18px 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
   background: var(--purple);
   border-bottom: none;
 }
 
 .nav-content {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 24px;
+  width: 100%;
+  padding: 0 160px 0 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -162,7 +163,7 @@ h1, h2, h3, h4, h5, h6 {
   border: 1.5px solid var(--purple);
   border-radius: var(--radius);
   font-size: 16px;
-  font-family: var(--font-be-vietnam), sans-serif;
+  font-family: var(--font-inter), sans-serif;
   background: white;
   color: var(--dark);
 }
@@ -292,7 +293,7 @@ a:focus-visible {
   text-decoration: underline;
   text-transform: none;
   letter-spacing: 0;
-  font-family: var(--font-be-vietnam), sans-serif;
+  font-family: var(--font-inter), sans-serif;
 }
 
 .btn-text:hover {
@@ -315,10 +316,11 @@ a:focus-visible {
 
 /* Hero */
 .hero-tagline {
-  font-size: 13px;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1px;
   text-transform: uppercase;
-  letter-spacing: 3px;
-  opacity: 0.8;
+  opacity: 0.85;
   margin-bottom: 16px;
   font-family: var(--font-poppins), sans-serif;
 }
@@ -340,14 +342,14 @@ a:focus-visible {
 /* Split hero */
 .hero-split {
   display: flex;
-  min-height: 520px;
+  min-height: calc(100vh - 57px);
   background: var(--purple);
-  gap: 16px;
-  padding: 16px;
+  gap: 24px;
+  padding: 28px;
 }
 
 .hero-split-image {
-  flex: 1 1 45%;
+  flex: 1 1 50%;
   position: relative;
   border-radius: var(--radius);
   overflow: hidden;
@@ -355,7 +357,7 @@ a:focus-visible {
 }
 
 .hero-split-text {
-  flex: 1 1 55%;
+  flex: 1 1 50%;
   background: var(--lilac);
   border-radius: var(--radius);
   display: flex;
@@ -368,7 +370,7 @@ a:focus-visible {
 /* Un spatiu sigur section */
 .safe-space-section {
   background: var(--lilac);
-  padding: 72px 24px;
+  padding: 108px 24px;
 }
 
 .safe-space-inner {
@@ -380,8 +382,8 @@ a:focus-visible {
 }
 
 .safe-space-image {
-  flex: 0 0 320px;
-  height: 360px;
+  flex: 0 0 480px;
+  height: 540px;
   border-radius: 60% 40% 55% 45% / 55% 45% 55% 45%;
   overflow: hidden;
   position: relative;
@@ -424,7 +426,7 @@ a:focus-visible {
 }
 
 .power-left h2 {
-  font-size: 48px;
+  font-size: 56px;
   font-weight: 800;
   line-height: 1.1;
   margin-bottom: 24px;

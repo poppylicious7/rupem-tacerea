@@ -5,8 +5,8 @@ export default function Home() {
   return (
     <div>
       {/* Split hero */}
-      <section className="hero-split">
-        <div className="hero-split-image">
+      <section className="hero-split" style={{ minHeight: "calc(100vh - 60px)" }}>
+        <div className="hero-split-image" style={{ position: "relative" }}>
           <Image
             src="/Hero-stories.jpg"
             alt="Persoană cu mesajul 'Love Shouldn't Hurt' scris pe spate — imagine simbolică pentru campania împotriva violenței domestice"
@@ -29,13 +29,15 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="hero-split-text">
-          <p className="hero-tagline">Vocea ta contează</p>
-          <h1 className="hero-title-large">Rupem Tăcerea</h1>
-          <p className="hero-subtitle-large" style={{ marginBottom: "40px" }}>
-            Spune-ți povestea. Te ascultăm, fără judecată.
-          </p>
-          <div style={{ display: "flex", gap: "14px", flexWrap: "wrap" }}>
+        <div className="hero-split-text" style={{ display: "flex", flexDirection: "column", justifyContent: "flex-start" }}>
+          <p className="hero-tagline" style={{ textTransform: "uppercase", marginTop: "32px" }}>Vocea ta contează</p>
+          <div style={{ marginTop: "72px" }}>
+            <h1 className="hero-title-large" style={{ fontSize: "120px" }}>Rupem Tăcerea</h1>
+            <p className="hero-subtitle-large">
+              Spune-ți povestea. Te ascultăm, fără judecată.
+            </p>
+          </div>
+          <div style={{ display: "flex", gap: "14px", flexWrap: "wrap", marginTop: "auto" }}>
             <Link href="/share" className="btn btn-primary">Împărtășește</Link>
             <Link href="/stories" className="btn btn-outline">Citește</Link>
           </div>
@@ -45,12 +47,12 @@ export default function Home() {
       {/* Un spațiu sigur */}
       <section className="safe-space-section">
         <div className="safe-space-inner">
-          <div className="safe-space-image">
+          <div className="safe-space-image" style={{ position: "relative" }}>
             <Image
-              src="/Hero-stories.jpg"
-              alt="Două persoane discutând — imagine simbolică pentru suport și înțelegere"
+              src="/safe-space.png"
+              alt="Două persoane discutând într-un spațiu luminos — imagine simbolică pentru suport și înțelegere"
               fill
-              style={{ objectFit: "cover", objectPosition: "center 20%" }}
+              style={{ objectFit: "cover", objectPosition: "center center" }}
             />
           </div>
           <div className="safe-space-text">
@@ -91,8 +93,8 @@ export default function Home() {
               <p>Nu există un prag de suferință pentru a conta. Dacă te-a marcat, merită spus.</p>
             </div>
 
-            <div className="power-card power-card-light">
-              <span className="card-num" style={{ color: "var(--purple)" }}>03</span>
+            <div className="power-card power-card-lilac">
+              <span className="card-num">03</span>
               <h3>Revizuit cu grijă</h3>
               <p>Un moderator citește fiecare poveste pentru a păstra un spațiu sigur.</p>
             </div>
@@ -104,16 +106,16 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
 
-      <div className="container" style={{ paddingTop: "0" }}>
-        <div className="help-box">
-          <h3>Ai nevoie de ajutor?</h3>
-          <p>
-            Sună gratuit la <a href="tel:0800500333"><strong>0800 500 333</strong></a> — disponibil 24/7
-          </p>
+        <div className="power-inner" style={{ marginTop: "32px" }}>
+          <div className="help-box" style={{ width: "100%" }}>
+            <h3>Ai nevoie de ajutor?</h3>
+            <p>
+              Sună gratuit la <a href="tel:0800500333"><strong>0800 500 333</strong></a> — disponibil 24/7
+            </p>
+          </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 }

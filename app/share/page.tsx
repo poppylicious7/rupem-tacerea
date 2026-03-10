@@ -65,7 +65,7 @@ export default function SharePage() {
 
   return (
     <div className="container">
-      <h1 style={{ fontSize: "42px", fontWeight: 800, marginBottom: "16px" }}>
+      <h1 style={{ fontSize: "48px", fontWeight: 800, marginBottom: "16px", textAlign: "center" }}>
         Împărtășește povestea ta
       </h1>
       <p style={{ color: "var(--dark)", marginBottom: "40px", lineHeight: 1.9, opacity: 0.8, textAlign: "center" }}>
@@ -142,7 +142,7 @@ export default function SharePage() {
               placeholder="Ex: 25"
               min="1"
               max="120"
-              style={{ maxWidth: "160px" }}
+              style={{ maxWidth: "100%" }}
             />
             <p className="form-hint">
               Vârsta va apărea lângă nume, ex: &quot;Maria, 25&quot;
